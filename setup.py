@@ -6,6 +6,7 @@ setup(
     author_email='kristoffer.sahlin@scilifelab.se',
     url='example.com',
     packages=['sahlin',],
+    scripts = ['scripts/getting_data.py'],
     license='GPLv3',
     long_description=open('README.md').read(),
 )
