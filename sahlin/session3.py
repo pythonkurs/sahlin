@@ -27,19 +27,17 @@ class CourseRepo(object):
         '''
         Constructor
         '''
+        self._surname = surname
         self.required = [".git","setup.py","README.md","scripts/getting_data.py","scripts/check_repo.py",surname + "/__init__.py",surname + "/session3.py"]
-
         
     @property
     def surname(self):
-        return self.surname
+        return self._surname
     
     @surname.setter
     def surname(self,new_surname):
         self.required[-2] = new_surname + "/__init__.py"
-        self.required[-1] = new_surname + "/session3.py"
-        
-        
+        self.required[-1] = new_surname + "/session3.py"   
     
     def check(self):
         for sPath in self.required:
@@ -55,6 +53,7 @@ class CourseRepo(object):
 #print(repo.required[-1])
 ## prints a/session3.py
 #
+#print repo.surname
 #repo.surname = "b"
 #print(repo.required[-1])
 ## prints b/session3.py
