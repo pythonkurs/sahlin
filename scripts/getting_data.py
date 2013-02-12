@@ -4,7 +4,7 @@ Created on Jan 24, 2013
 
 @author: ksahlin
 '''
-from sahlin.Lecture2 import NYTrainOutagesByRepairs
+from sahlin.session2 import NYTrainOutagesByRepairs 
 NYTrainOutagesByRepairs()
 
 
