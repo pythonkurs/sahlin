@@ -36,6 +36,7 @@ class CourseRepo(object):
     
     @surname.setter
     def surname(self,new_surname):
+        self._surname = new_surname
         self.required[-2] = new_surname + "/__init__.py"
         self.required[-1] = new_surname + "/session3.py"   
     
@@ -58,3 +59,4 @@ class CourseRepo(object):
 #print(repo.required[-1])
 ## prints b/session3.py
 #print repo.check(), repo.required
+#print repo.surname
