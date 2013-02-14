@@ -46,12 +46,9 @@ if __name__ == '__main__':
     repos = requests.get("https://api.github.com/orgs/%s/repos" % org, auth=("ksahlin", pwd)) #get all repos in pythoncourse
     repos_data = repos.json
     all_commits_df = DataFrame()
-    counter = 0
     for repo in repos_data:
-        counter += 1
         all_commits_df = all_commits_df.append(ReturnDataFrame(repo))
-        if counter >100:
-            break
+
 
     day,hour = MostFrequentCommitTime(all_commits_df)
     print 'Most common commit date. Day:',day ,'Hour(24h):',hour 
