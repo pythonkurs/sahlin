@@ -1,0 +1,7 @@
+There are 48 members of the "pythoncourse" organization. The users that are members of this group has a total of 
+188 repositories. The one with the most repositories here is (of course) brainstorm with 18 repos. 
+2 students does not have any repos under there personal name (and thus, has not completed the trygit tutorial!!)
+
+About times for commits:
+Most frequent hour is 16 on a Wednesday. Mehmudi has been working late and committed assignments at 2:14am. 
+I worked very early one day and committed at 6:30.
