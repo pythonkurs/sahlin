@@ -65,7 +65,9 @@ if __name__ == '__main__':
 #    #sys.exit(0)
 #    ########
     for repo in repos_data:
-        all_commits_df = all_commits_df.append(ReturnDataFrame(repo))
+        df = ReturnDataFrame(repo)
+        if not df.empty:
+            all_commits_df = all_commits_df.append(df)
 
     day,hour = MostFrequentCommitTime(all_commits_df)
     print 'Most common commit date. Day:',day ,'Hour(24h):',hour 
