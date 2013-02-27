@@ -1,0 +1,19 @@
+Fraction of outages caused by repairs: 0.533333333333
+Filename: session2.py
+
+Line #    Mem usage    Increment   Line Contents
+================================================
+     8                             @profile
+     9     7.621 MB     0.000 MB   def NYTrainOutagesByRepairs():
+    10     7.621 MB     0.000 MB       xml_file = "http://www.grandcentral.org/developers/data/nyct/nyct_ene.xml"
+    11     7.777 MB     0.156 MB       import untangle
+    12     9.953 MB     2.176 MB       doc = untangle.parse(xml_file) #read in the XML file
+    13     9.953 MB     0.000 MB       outages = doc.NYCOutages.outage # fetch the outages
+    14     9.953 MB     0.000 MB       iRepairCount = 0
+    15     9.953 MB     0.000 MB       iTotOutages = len(outages)
+    16     9.957 MB     0.004 MB       for outage in outages:
+    17     9.957 MB     0.000 MB           reason = outage.get_elements('reason')[0].cdata #get the reason from each outage
+    18     9.957 MB     0.000 MB           if reason == 'REPAIR': iRepairCount += 1 
+    19     9.957 MB     0.000 MB       print 'Fraction of outages caused by repairs:', iRepairCount / float(iTotOutages)
+
+

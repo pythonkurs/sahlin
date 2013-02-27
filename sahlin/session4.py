@@ -38,7 +38,7 @@ def MostFrequentCommitTime(all_commits_df):
         #print datetime.datetime.weekday(row[0]),row[0].hour
     
     day_dict = {0 : 'Monday', 1 : 'Tuesday', 2 : 'Wednesday', 3 : 'Thursday', 4 : 'Friday', 5 : 'Saturday', 6 : 'Sunday'}
-    
+
     return( day_dict[freq_table.most_common(1)[0][0][0]], freq_table.most_common(1)[0][0][1] )
 
 
@@ -48,7 +48,7 @@ if __name__ == '__main__':
     repos = requests.get("https://api.github.com/orgs/%s/repos" % org, auth=("ksahlin", pwd)) #get all repos in pythoncourse
     repos_data = repos.json()
     all_commits_df = DataFrame()
-    #print repos_data
+
 #    #### individual exploring
 #    import sys
 #    users = requests.get("https://api.github.com/orgs/pythonkurs/members", auth=("ksahlin", pwd))

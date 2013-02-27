@@ -1,0 +1,55 @@
+PASS
+Filename: /Library/Python/2.6/site-packages/sahlin/session3.py
+
+Line #    Mem usage    Increment   Line Contents
+================================================
+    11                                 @profile
+    12     7.613 MB     0.000 MB       def __init__(self,target_path):
+    13     7.617 MB     0.004 MB           self.target_path = target_path
+    14     7.617 MB     0.000 MB           self.original_path = os.getcwd()
+
+
+Filename: /Library/Python/2.6/site-packages/sahlin/session3.py
+
+Line #    Mem usage    Increment   Line Contents
+================================================
+    15                                 @profile
+    16     7.617 MB     0.000 MB       def __enter__(self):
+    17     7.617 MB     0.000 MB           os.chdir(self.target_path)
+
+
+Filename: /Library/Python/2.6/site-packages/sahlin/session3.py
+
+Line #    Mem usage    Increment   Line Contents
+================================================
+    18                                 @profile
+    19     7.621 MB     0.000 MB       def __exit__(self, type, value, traceback):
+    20     7.621 MB     0.000 MB           os.chdir(self.original_path)
+
+
+Filename: /Library/Python/2.6/site-packages/sahlin/session3.py
+
+Line #    Mem usage    Increment   Line Contents
+================================================
+    44                                 @profile
+    45     7.617 MB     0.000 MB       def check(self):
+    46     7.621 MB     0.004 MB           for sPath in self.required:
+    47     7.621 MB     0.000 MB               if not os.path.exists(sPath):
+    48                                             return 'Path '+sPath+' does not exist.'
+    49                                     
+    50     7.621 MB     0.000 MB           return True
+
+
+Filename: /Library/Python/2.6/site-packages/sahlin/session3.py
+
+Line #    Mem usage    Increment   Line Contents
+================================================
+    27                                 @profile
+    28                                 def __init__(self,surname):
+    29                                     '''
+    30                                     Constructor
+    31     7.617 MB     0.000 MB           '''
+    32     7.617 MB     0.000 MB           self._surname = surname
+    33     7.617 MB     0.000 MB           self.required = [".git","setup.py","README.md","scripts/getting_data.py","scripts/check_repo.py",surname + "/__init__.py",surname + "/session3.py"]
+
+

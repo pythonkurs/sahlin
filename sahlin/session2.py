@@ -5,7 +5,6 @@ Created on Jan 25, 2013
 assignment for Session2.
 '''
 
-
 def NYTrainOutagesByRepairs():
     xml_file = "http://www.grandcentral.org/developers/data/nyct/nyct_ene.xml"
     import untangle
@@ -19,3 +18,5 @@ def NYTrainOutagesByRepairs():
     print 'Fraction of outages caused by repairs:', iRepairCount / float(iTotOutages)
 
 
+if __name__ == "__main__":
+    NYTrainOutagesByRepairs()
