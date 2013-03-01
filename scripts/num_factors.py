@@ -34,7 +34,6 @@ def factorize(n):
 if __name__ == "__main__":
     
     start = time()  
-    sys.argv.append('m')
     if sys.argv[-1] == 's':
         unique_factors = [len({}.fromkeys(factorize(i)).keys()) for i in range(2, 500001) ]
         print dict(Counter(unique_factors))
@@ -53,10 +52,30 @@ if __name__ == "__main__":
         dview = client[:]
         @dview.parallel(block=True)
         def count_unique_factors(n):
-            return len({}.fromkeys(factorize(n)).keys())  #factorize(n)
+            if n < 2:
+                return []
+            factors = []
+            p = 2
+    
+            while True:
+                if n == 1:
+                    return len({}.fromkeys(factors).keys())
+                r = n % p
+                if r == 0:
+                    factors.append(p)
+                    n = n / p
+                elif p * p >= n:
+                    factors.append(n)
+                    return len({}.fromkeys(factors).keys())
+                elif p > 2:
+                    p += 2
+                else:
+                    p += 1
+            
 
         unique_factors = count_unique_factors.map(xrange(2, 500001))
         print dict(Counter(unique_factors))
+        
             
     elapsed = time() - start
     print 'elapsed:', elapsed
